@@ -7,6 +7,7 @@ var Nav = require('./Nav');
 var Home = require('./Home');
 var Popular = require('./Popular');
 var Battle = require('./Battle');
+var Results = require('./Results');
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/battle' component={Battle} />
             <Route path='/popular' component={Popular} />
+            <Route path="/battle/results" component={Results} />
             <Route render={function(){
               return (
                 <p>404 Not Found</p>
