@@ -15,15 +15,15 @@ function getRepos(username) {
 }
 
 function getStarCount(repos) {
+
   return repos.data.reduce(function(count, repo) {
-    return count + repo.startgazers_count;
+    return count + repo.stargazers_count;
   }, 0)
 }
 
 function calculateScore(profile, repos) {
   var followers = profile.followers;
-  var totalStars = getStarCount(repositories);
-  debugger
+  var totalStars = getStarCount(repos);
   return (followers * 3) + totalStars;
 }
 
@@ -49,7 +49,7 @@ function getUserData(player) {
 
 function sortPlayers(players) {
   return players.sort(function(a, b){
-    return a.score - b.score;
+    return b.score - a.score;
   });
 }
 
