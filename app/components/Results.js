@@ -28,11 +28,10 @@ function Profile(props) {
       </ul>
     </PlayerPreview>
   )
-}
-
+};
 Profile.propTypes = {
   info: PropTypes.object.isRequired,
-}
+};
 
 function Player({ label, score, profile }) {
   return (
@@ -42,26 +41,20 @@ function Player({ label, score, profile }) {
       <Profile info={profile}/>
     </div>
   )
-}
-
+};
 Player.propTypes = {
   label: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
   profile: PropTypes.object.isRequired,
-}
+};
 
 class Results extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      winner: null,
-      loser: null,
-      error: null,
-      loading: true,
-    }
-  }
-
+  state = {
+    winner: null,
+    loser: null,
+    error: null,
+    loading: true,
+  };
   componentDidMount() {
     const { location } = this.props;
     const { playerOneName, playerTwoName } = queryString.parse(location.search)
